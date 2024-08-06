@@ -74,12 +74,14 @@ img{
 .profile-details .intro h2{
     margin-top: 20px;
 }
+
 .profile-details .intro h4{
     background: #1d1d1d;
     font-weight: 400;
     border-radius: 4px;
     padding: 5px 10px;
     margin: 8px;
+    transition:0.5s;
 }
 
 .profile-details .intro .social{
@@ -158,6 +160,7 @@ img{
     border-radius: 30px;
     margin-top: 1.5rem;
     border: none;
+    font-weight: 700;
 }
 
 /* About Section starts here */
@@ -220,17 +223,105 @@ img{
     padding: 0.45rem;
 }
 
-.work .workbox .desc{
+.work .workbox .desc, 
+.education .education-list .education-box{
     width: 70%;
     color: #555;
 }
-.work .workbox .desc h3{
+.work .workbox .desc h3, 
+.education .education-list .education-box h3,
+.skill-box .skill-name h3{
     color: #f2f2f2;
     margin-bottom: 3px;
 }
 
 .work .workbox .desc p{
     margin: 0px;
+}
+
+.education .education-list .education-box .education-discipline{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.education .education-list .education-box {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #333;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.profile-details .intro h2:hover,
+.row .content:hover
+{
+    background: linear-gradient(45deg, #F27BBD, #C65BCF, #874CCC);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: scale(1.02);
+    transition: all 0.1s;
+}
+
+.profile-details .intro h4:hover{
+    background: linear-gradient(45deg, #F27BBD, #C65BCF, #874CCC);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transform: scale(1.02);
+    transition: all 0.1s;    
+}
+.download-btn:hover{
+    background: linear-gradient(45deg, #F27BBD, #C65BCF, #874CCC);
+    font-weight: 700;
+    color: #F3F7EC;
+    transform: scale(1.02);
+    transition: all 0.1s;
+}
+
+.skills {
+    background-color: #1d1d1d;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 100%;
+}
+.skills h1{
+    margin-bottom: 0.5rem;
+}
+.skills-list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.skill-box {
+    width: 100%;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0 0 0.5rem;
+}
+
+.skill-name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.skill-bar {
+    background-color: #f2f2f2;
+    height: 5px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    background-color: var(--light-green);
+    height: 100%;
+    transition: width 0.5s ease-in-out;
 }
 
 /* CSS Code responsive designs */
@@ -245,8 +336,17 @@ img{
     .about .h1{
         font-size: 2.2rem;
     }
-    .about.work{
+    .about.work, .about .education{
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(4, auto);
+    }
+    .about h1:after{
+        position: absolute;
+        content: "";
+        top: 50%;
+        right: -25%;
+        width: 22.5%;
+        height: 3px;
+        background: linear-gradient(45deg, #f64c57, #e21b5a);
     }
 }
